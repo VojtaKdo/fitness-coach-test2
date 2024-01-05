@@ -84,7 +84,7 @@ export const ListItems = (props: any): JSX.Element => {
 export const SecondaryListItems = (props: any): JSX.Element => {
   return (
     <React.Fragment>
-      <Link to={"/stats"} style={{textDecoration: "none", color: "black"}}>
+      <Link to={"/achievements"} style={{textDecoration: "none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -92,7 +92,7 @@ export const SecondaryListItems = (props: any): JSX.Element => {
             alt=""
           />
         </ListItemIcon>
-        <ListItemText primary="Stats" />
+        <ListItemText primary="achievements" />
       </ListItemButton>
       </Link>
       <Link to={"/friends"} style={{textDecoration: "none", color: "black"}}>

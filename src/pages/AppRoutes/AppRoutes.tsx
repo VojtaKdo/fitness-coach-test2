@@ -9,20 +9,22 @@ import { Settings } from "../Settings/Settings";
 import { Profile } from "../Profile/Profile";
 import { Timetable } from "../Timetable/Timetable";
 import { Notes } from "../Notes/Notes";
-import { Stats } from "../Stats/Stats";
+import { Achievements } from "../Achievements/Achievements";
 import { Exercises } from "../Exercises/Exercises";
 import { Dishes } from "../Dishes/Dishes";
 import { Programs } from "../Programs/Programs";
 import { Friends } from "../Friends/Friends";
 import { Notifications } from "../Notifications/Notifications";
 import { Policies } from "../Policies/Policies";
+import { Friend } from "../Friends/Friend";
+import { Program } from "../Programs/Program";
+import { Dish } from "../Dishes/Dish";
 
 export function AppRoutes() {
     return (
         <HashRouter>
             <Routes>
-                <Route path="/" element={<MainPage />} />
-                <Route path="/dashboard" element={<Dashboard />}/>
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/signin" element={<SignIn />}/>
                 <Route path="/signup" element={<SignUp />}/>
                 <Route path="*" element={<NotFound />} />
@@ -31,13 +33,16 @@ export function AppRoutes() {
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/timetable" element={<Timetable/>}/>
                 <Route path="/notes" element={<Notes/>}/>
-                <Route path="/stats" element={<Stats/>}/>
+                <Route path="/achievements" element={<Achievements/>}/>
                 <Route path="/exercises" element={<Exercises/>}/>
                 <Route path="/dishes" element={<Dishes/>}/>
                 <Route path="/programs" element={<Programs/>}/>
                 <Route path="/friends" element={<Friends/>}/>
                 <Route path="/notifications" element={<Notifications/>}/>
                 <Route path="/policies" element={<Policies/>}/>
+                <Route path="/friend" element={<Friend/>}/>
+                <Route path="/program" element={<Program/>}/>
+                <Route path="/dish" element={<Dish/>}/>
             </Routes>
         </HashRouter>
     )

@@ -7,6 +7,7 @@ export function Timetable(){
             <p>Go back to dashboard</p>
         </Link>
         <p>Rozvrh</p>
+        <p>Rozvrh bude pro každý týden stejný, budeme vkládat hodiny podobně jako ve škole</p>
         </>
     )
 }

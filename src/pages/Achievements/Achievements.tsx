@@ -32,7 +32,6 @@ export function Achievements(){
                 <p>Status: Locked</p>
             </li>
         </ul>
-        <Link to={"/"}><p>Go back to dashboard</p></Link>
         </>
     )
 }

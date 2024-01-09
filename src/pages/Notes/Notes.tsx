@@ -7,6 +7,7 @@ export function Notes(){
             <p>Go back to dashboard</p>
         </Link>
         <p>Poznámky</p>
+        <p>Podobně jako notion, data budeme ukládat do souboru</p>
         </>
     )
 }

@@ -19,6 +19,7 @@ import { Policies } from "../Policies/Policies";
 import { Friend } from "../Friends/Friend";
 import { Program } from "../Programs/Program";
 import { Dish } from "../Dishes/Dish";
+import { AppReview } from "../AppReview/AppReview";
 
 export function AppRoutes() {
     return (
@@ -43,6 +44,7 @@ export function AppRoutes() {
                 <Route path="/friend" element={<Friend/>}/>
                 <Route path="/program" element={<Program/>}/>
                 <Route path="/dish" element={<Dish/>}/>
+                <Route path="/appreview" element={<AppReview/>}/>
             </Routes>
         </HashRouter>
     )

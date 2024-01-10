@@ -13,7 +13,7 @@ import { Achievements } from "../Achievements/Achievements";
 import { Exercises } from "../Exercises/Exercises";
 import { Dishes } from "../Dishes/Dishes";
 import { Programs } from "../Programs/Programs";
-import { Friends } from "../Friends/Friends";
+import Friends from "../Friends/Friends";
 import { Notifications } from "../Notifications/Notifications";
 import { Policies } from "../Policies/Policies";
 import { Friend } from "../Friends/Friend";

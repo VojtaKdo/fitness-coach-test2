@@ -96,7 +96,7 @@ export const SecondaryListItems = (props: any): JSX.Element => {
       </ListItemButton>
       </Link>
       <Link to={"/friends"} style={{textDecoration: "none", color: "black"}}>
-      <ListItemButton>
+      <ListItemButton selected>
         <ListItemIcon>
           <img
             src={friends}

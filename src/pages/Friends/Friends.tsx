@@ -23,14 +23,32 @@ import { ThemeOptions } from "@mui/material/styles";
 import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Link as RedirectLink } from "react-router-dom";
-import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
+import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 
 const style = {
-  py: 0,
+  py: -1,
   width: '100%',
   maxWidth: 720,
 };
+
+interface AvatarItem {
+  id: number;
+  status: "online" | "cvičím" | "nerušit";
+}
+const getStatusColor = (status: AvatarItem["status"]) => {
+  switch (status) {
+    case "online": return "#4CAF50";
+    case "cvičím": return "#FF4081";
+    case "nerušit": return "#FF0000";
+  }
+}
+
+const avatarData: AvatarItem[] = [
+  {id: 1, status: "online"},
+  {id: 2, status: "cvičím"},
+  {id: 3, status: "nerušit"},
+]
 
 function Copyright(props: any) {
   return (
@@ -258,157 +276,42 @@ export default function Friends() {
         >
           <Toolbar />
           <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-            <Link to={"/"}>
-              <h3>Go back to dashboard</h3>
+            <Link to={"/"} style={{color:"#9471F6", textDecoration: "none", fontSize: 25, fontWeight: "bold"}}>
+              <KeyboardReturnIcon></KeyboardReturnIcon>
+              Go back to dashboard
             </Link>
             <Typography>
               <h1>Friends</h1>
             </Typography>
-            <Grid container spacing={6}>
-              <Grid item xs={12} md={4} lg={6}>
+            <Grid container spacing={0}>
+              {avatarData.map((item) =>
+              <Grid item xs={12} md={4} lg={4} sm={6} key={item.id}>  
               <List>
                 <Paper
                   sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
                     height: 120,
                     fontSize: 20,
                     justifyContent: "center",
+                    borderRadius: 0,
                   }}
-                  elevation={4}
+                  elevation={1}
                 >
                   <ListItem sx={style}>
-                    <IconButton color="inherit" sx={{ width: 100, height: 100}}>
+                    <IconButton color="inherit" sx={{ textAlign: "center", height: 100}}>
                       <Avatar
                         alt="Avatar"
                         src="/pika.png"
-                        sx={{ width: 80, height: 80}}
+                        sx={{ width: 80, height: 80, backgroundColor: getStatusColor(item.status),}}
                       />
                     </IconButton>
-                    <p style={{fontSize: 30}}>Honza Tillů</p>
+                    <p style={{ borderRadius: "50%", width: 10, height: 10, backgroundColor: getStatusColor(item.status)}}></p>
+                    <p style={{fontSize: 30, paddingLeft: 20}}>Honza Tillů</p>
                   </ListItem>
                 </Paper>
                 <Divider component="li"/>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 120,
-                    fontSize: 20,
-                    justifyContent: "center",
-                  }}
-                  elevation={4}
-                >
-                  <ListItem sx={style}>
-                    <IconButton color="inherit" sx={{ width: 100, height: 100}}>
-                      <Avatar
-                        alt="Avatar"
-                        src="/pika.png"
-                        sx={{ width: 80, height: 80}}
-                      />
-                    </IconButton>
-                    <p style={{fontSize: 30}}>Honza Tillů</p>
-                  </ListItem>
-                </Paper>
-                <Divider component="li" />
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 120,
-                    fontSize: 20,
-                    justifyContent: "center",
-                  }}
-                  elevation={4}
-                >
-                  <ListItem sx={style}>
-                    <IconButton color="inherit" sx={{ width: 100, height: 100}}>
-                      <Avatar
-                        alt="Avatar"
-                        src="/pika.png"
-                        sx={{ width: 80, height: 80}}
-                      />
-                    </IconButton>
-                    <p style={{fontSize: 30}}>Honza Tillů</p>
-                  </ListItem>
-                </Paper>
               </List>
               </Grid>
-              <Grid item xs={12} md={4} lg={6}>
-              <List>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 120,
-                    fontSize: 20,
-                    justifyContent: "center",
-                  }}
-                  elevation={4}
-                >
-                  <ListItem sx={style}>
-                    <IconButton color="inherit" sx={{ width: 100, height: 100}}>
-                      <Avatar
-                        alt="Avatar"
-                        src="/pika.png"
-                        sx={{ width: 80, height: 80}}
-                      />
-                    </IconButton>
-                    <p style={{fontSize: 30}}>Honza Tillů</p>
-                  </ListItem>
-                </Paper>
-                <Divider component="li"/>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 120,
-                    fontSize: 20,
-                    justifyContent: "center",
-                  }}
-                  elevation={4}
-                >
-                  <ListItem sx={style}>
-                    <IconButton color="inherit" sx={{ width: 100, height: 100}}>
-                      <Avatar
-                        alt="Avatar"
-                        src="/pika.png"
-                        sx={{ width: 80, height: 80}}
-                      />
-                    </IconButton>
-                    <p style={{fontSize: 30}}>Honza Tillů</p>
-                  </ListItem>
-                </Paper>
-                <Divider component="li" />
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 120,
-                    fontSize: 20,
-                    justifyContent: "center",
-                  }}
-                  elevation={4}
-                >
-                  <ListItem sx={style}>
-                    <IconButton color="inherit" sx={{ width: 100, height: 100}}>
-                      <Avatar
-                        alt="Avatar"
-                        src="/pika.png"
-                        sx={{ width: 80, height: 80}}
-                      />
-                    </IconButton>
-                    <p style={{fontSize: 30}}>Honza Tillů</p>
-                  </ListItem>
-                </Paper>
-              </List>
-              </Grid>
+              )}
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>

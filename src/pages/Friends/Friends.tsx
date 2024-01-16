@@ -29,8 +29,12 @@ import KeyboardReturnIcon from '@mui/icons-material/KeyboardReturn';
 const style = {
   py: -1,
   width: '100%',
-  maxWidth: 720,
+  maxWidth: "720px",
 };
+
+const theme = createTheme({
+  spacing: 4,
+})
 
 interface AvatarItem {
   id: number;
@@ -283,31 +287,39 @@ export default function Friends() {
             <Typography>
               <h1>Friends</h1>
             </Typography>
-            <Grid container spacing={0}>
+            <Grid container spacing={1}>
               {avatarData.map((item) =>
-              <Grid item xs={12} md={4} lg={4} sm={6} key={item.id}>  
+              <Grid item xs={12} md={6} lg={4} sm={6} key={item.id}>  
               <List>
+                <Link to={"/friend"} style={{textDecoration: "none"}}>
                 <Paper
                   sx={{
                     height: 120,
-                    fontSize: 20,
+                    display: "flex",
                     justifyContent: "center",
+                    alignContent: "center",
                     borderRadius: 0,
+                    transition: "0.2s",
+                    "&:hover": {
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+                      transition: "0.2s",
+                    }
                   }}
-                  elevation={1}
+                  elevation={2}
                 >
                   <ListItem sx={style}>
-                    <IconButton color="inherit" sx={{ textAlign: "center", height: 100}}>
+                    <div style={{position: "relative"}}>
                       <Avatar
                         alt="Avatar"
                         src="/pika.png"
-                        sx={{ width: 80, height: 80, backgroundColor: getStatusColor(item.status),}}
+                        sx={{ width: 80, height: 80}}
                       />
-                    </IconButton>
-                    <p style={{ borderRadius: "50%", width: 10, height: 10, backgroundColor: getStatusColor(item.status)}}></p>
-                    <p style={{fontSize: 30, paddingLeft: 20}}>Honza Tillů</p>
+                    <div style={{ borderRadius: "50%", width: theme.spacing(3), height: theme.spacing(3), backgroundColor: getStatusColor(item.status), bottom: "0", right: "0", position: "absolute"}}></div>
+                    </div>
+                    <p style={{fontSize: "25pt", paddingLeft: 20, whiteSpace: "nowrap", textOverflow: "ellipsis"}}>Honza Tillů</p>
                   </ListItem>
                 </Paper>
+                </Link>
                 <Divider component="li"/>
               </List>
               </Grid>

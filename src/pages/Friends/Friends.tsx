@@ -289,7 +289,7 @@ export default function Friends() {
             </Typography>
             <Grid container spacing={1}>
               {avatarData.map((item) =>
-              <Grid item xs={12} md={6} lg={4} sm={6} key={item.id}>  
+              <Grid item xs={12} md={6} lg={4} sm={12} key={item.id}>  
               <List>
                 <Link to={"/friend"} style={{textDecoration: "none"}}>
                 <Paper
@@ -301,7 +301,7 @@ export default function Friends() {
                     borderRadius: 0,
                     transition: "0.2s",
                     "&:hover": {
-                      boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
                       transition: "0.2s",
                     }
                   }}

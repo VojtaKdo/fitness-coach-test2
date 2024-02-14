@@ -280,7 +280,7 @@ export default function Friends() {
         >
           <Toolbar />
           <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-            <Link to={"/"} style={{color:"#9471F6", textDecoration: "none", fontSize: 25, fontWeight: "bold"}}>
+            <Link to={"/dashboard"} style={{color:"#9471F6", textDecoration: "none", fontSize: 25, fontWeight: "bold"}}>
               <KeyboardReturnIcon></KeyboardReturnIcon>
               Go back to dashboard
             </Link>

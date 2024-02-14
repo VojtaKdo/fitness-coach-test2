@@ -60,7 +60,7 @@ export default function NotFound() {
           </Container>
         </Box>
       </Box>
-      <Link to={"/"}>Domů</Link>
+      <Link to={"/dashboard"}>Domů</Link>
     </ThemeProvider>
   );
 }

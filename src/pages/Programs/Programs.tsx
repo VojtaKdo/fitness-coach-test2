@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export function Programs(){
     return(
         <>
-        <Link to={"/"}>
+        <Link to={"/dashboard"}>
             <p>Go back to dashboard</p>
         </Link>
         <h2>Beginner | Intermidiate | Hard</h2>

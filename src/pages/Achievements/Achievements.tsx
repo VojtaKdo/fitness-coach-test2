@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export function Achievements(){
     return(
         <>
-        <Link to={"/"}>
+        <Link to={"/dashboard"}>
             <p>Go back to dashboard</p>
         </Link>
         <p>Úspěchy</p>

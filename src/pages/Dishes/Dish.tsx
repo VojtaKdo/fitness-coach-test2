@@ -11,7 +11,7 @@ export function Dish(){
         <Link to={"/dishes"}>
             <p>Go back to dishes</p>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/dashboard"}>
             <p>Go back to dashboard</p>
         </Link>
         </>

@@ -12,6 +12,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Link as LinkReact } from "react-router-dom";
+import { signUp } from '../../models/User';
+import { useState } from "react";
 
 function Copyright(props: any) {
   return (
@@ -30,13 +33,21 @@ function Copyright(props: any) {
 const defaultTheme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [info, setInfo] = useState();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+    const user = await signUp({
+      email: data.get('email') as string,
+      password: data.get('password') as string,
+      name: data.get('name') as string,
+      surname: data.get('surname') as string,
     });
+    if(user.status == 201){
+      //redirect
+      return;
+    }
+    setInfo(user.msg);
   };
 
   return (
@@ -118,9 +129,11 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
+                <LinkReact to={"/"}>
                 <Link href="#" variant="body2">
                   Already have an account? Sign in
                 </Link>
+                </LinkReact>
               </Grid>
             </Grid>
           </Box>

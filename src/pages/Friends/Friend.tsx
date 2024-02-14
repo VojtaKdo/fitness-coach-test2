@@ -13,7 +13,7 @@ export function Friend(){
         <p>seznam přátel</p>
 
         <Link to={"/friends"}><p>Go back to friendlist</p></Link>
-        <Link to={"/"}><p>Go back to dashboard</p></Link>
+        <Link to={"/dashboard"}><p>Go back to dashboard</p></Link>
         </>
     )
 }

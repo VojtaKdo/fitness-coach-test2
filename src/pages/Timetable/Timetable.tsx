@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export function Timetable(){
     return(
         <>
-        <Link to={"/"}>
+        <Link to={"/dashboard"}>
             <p>Go back to dashboard</p>
         </Link>
         <p>Rozvrh</p>

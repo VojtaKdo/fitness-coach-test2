@@ -8,7 +8,7 @@ export function Program(){
         <p>osu! maniak: 6 písniček v řade</p>
         <p>Jedno výherní lolečko - pro prohře další hra</p>
         <Link to={"/programs"}><p>Go back to programs</p></Link>
-        <Link to={"/"}><p>Go back to dashboard</p></Link>
+        <Link to={"/dashboard"}><p>Go back to dashboard</p></Link>
         </>
     )
 }

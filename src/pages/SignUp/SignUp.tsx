@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as LinkReact } from "react-router-dom";
 import { signUp } from '../../models/User';
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props: any) {
   return (
@@ -34,6 +35,7 @@ const defaultTheme = createTheme();
 
 export default function SignUp() {
   const [info, setInfo] = useState();
+  const navigate = useNavigate();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -43,11 +45,9 @@ export default function SignUp() {
       name: data.get('name') as string,
       surname: data.get('surname') as string,
     });
-    if(user.status == 201){
-      //redirect
-      return;
-    }
-    setInfo(user.msg);
+    if(user.status == 201) return navigate("/signin");
+    if(user.status == 400) return setInfo(user.msg);
+    if(user.status == 500) return navigate("/error");
   };
 
   return (
@@ -73,10 +73,10 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="name"
                   required
                   fullWidth
-                  id="firstName"
+                  id="name"
                   label="First Name"
                   autoFocus
                 />
@@ -85,9 +85,9 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
+                  id="surname"
                   label="Last Name"
-                  name="lastName"
+                  name="surname"
                   autoComplete="family-name"
                 />
               </Grid>
@@ -136,6 +136,7 @@ export default function SignUp() {
                 </LinkReact>
               </Grid>
             </Grid>
+            <p>{info}</p>
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />

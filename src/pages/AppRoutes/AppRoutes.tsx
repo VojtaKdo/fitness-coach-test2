@@ -26,6 +26,7 @@ export function AppRoutes() {
         <HashRouter>
             <Routes>
                 <Route path="/" element={<SignIn />} />
+                <Route path="/signin" element={<SignIn />} />
                 <Route path="/dashboard" element={<Dashboard />}/>
                 <Route path="/signup" element={<SignUp />}/>
                 <Route path="*" element={<NotFound />} />
